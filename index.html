@@ -1,0 +1,376 @@
+
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f6a9d2">
+  <meta name="description" content="Descubre ropa cómoda, cute y con personalidad en Perezosos Shop.">
+
+  <title>Perezosos Shop — Ropa cómoda, estilo bonito</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+
+<body>
+  <div class="announcement">
+    ♡ Ropa bonita para días tranquilos · ¡Bienvenido a Perezosos Shop! ♡
+  </div>
+
+  <header class="site-header">
+    <a class="brand" href="#" aria-label="Perezosos Shop, inicio">
+      <img src="assets/logo.png" alt="Perezosos Shop" class="brand-mark">
+    </a>
+
+    <nav class="desktop-nav" aria-label="Navegación principal">
+      <a href="#catalogo">Catálogo</a>
+      <a href="#nosotros">Nuestra vibra</a>
+      <a href="#preguntas">Preguntas</a>
+    </nav>
+
+    <button
+      class="mobile-menu-button"
+      id="mobile-menu-button"
+      type="button"
+      aria-label="Abrir menú"
+      aria-expanded="false"
+      aria-controls="mobile-nav"
+    >☰</button>
+
+    <button class="cart-button" id="open-cart" type="button" aria-label="Abrir carrito">
+      <span class="bag-icon">♡</span>
+      <span>Mi carrito</span>
+      <b id="cart-count">0</b>
+    </button>
+  </header>
+
+  <nav class="mobile-nav" id="mobile-nav" aria-label="Navegación móvil" hidden>
+    <a href="#catalogo">Catálogo <span>↗</span></a>
+    <a href="#nosotros">Nuestra vibra <span>♡</span></a>
+    <a href="#preguntas">Preguntas <span>?</span></a>
+  </nav>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <span class="eyebrow">
+          <span class="sparkle">✦</span>
+          Perezosos Shop es para toda la familia
+        </span>
+
+        <h1>Vístete bonito.<br><span>Ve a tu ritmo.</span></h1>
+
+        <p>
+          Prendas cómodas, detalles cute y mucha personalidad.
+          Encuentra eso que va contigo y hazlo parte de tu día.
+        </p>
+
+        <div class="hero-actions">
+          <a class="button button-dark" href="#catalogo">
+            Explorar catálogo <span>↗</span>
+          </a>
+          <a class="text-link" href="#nosotros">
+            Conócenos <span>♡</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="hero-art">
+        <div class="blob blob-back"></div>
+        <div class="hero-sticker sticker-top">Diseños bonitos <span>♡</span></div>
+
+        <img
+          src="assets/juanito.png"
+          alt="Mascota perezoso de Perezosos Shop"
+          class="hero-sloth"
+        >
+
+        <div class="hero-sticker sticker-bottom">
+          <span>✿</span> Dale un cambio a tu vida
+        </div>
+
+        <span class="floating-heart heart-one">♡</span>
+        <span class="floating-heart heart-two">✦</span>
+      </div>
+    </section>
+
+    <section class="catalog-section" id="catalogo">
+      <div class="section-heading">
+        <div>
+          <span class="eyebrow">ENCUENTRA TU FAVORITO</span>
+          <h2>El closet <span>Perezoso</span></h2>
+          <p>Pequeños detalles, grandes outfits.</p>
+        </div>
+
+        <div class="catalog-tools">
+          <label class="search-box">
+            <span>⌕</span>
+            <input
+              id="search-input"
+              type="search"
+              placeholder="Buscar prendas..."
+              aria-label="Buscar prendas"
+            >
+          </label>
+
+          <select id="sort-select" aria-label="Ordenar productos">
+            <option value="featured">Destacados</option>
+            <option value="low">Precio: menor a mayor</option>
+            <option value="high">Precio: mayor a menor</option>
+            <option value="name">Nombre A–Z</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="category-pills" id="category-pills">
+        <button class="pill active" type="button" data-category="Todos" aria-pressed="true">
+          Todo bonito <span>✦</span>
+        </button>
+        <button class="pill" type="button" data-category="Playeras" aria-pressed="false">
+          Playeras
+        </button>
+        <button class="pill" type="button" data-category="Sudaderas" aria-pressed="false">
+          Sudaderas
+        </button>
+        <button class="pill" type="button" data-category="Joggers" aria-pressed="false">
+          Joggers
+        </button>
+        <button class="pill" type="button" data-category="Gorros" aria-pressed="false">
+          Gorros
+        </button>
+      </div>
+
+      <div class="product-grid" id="product-grid" aria-live="polite"></div>
+
+      <p class="catalog-hint">
+        ♡ Los precios y productos de esta versión son ejemplos editables.
+        Confirma disponibilidad antes de publicar.
+      </p>
+    </section>
+
+    <section class="about-section" id="nosotros">
+      <div class="about-art">
+        <img src="assets/perezoso-perfil.jpg" alt="Carita de la mascota Perezosos Shop">
+        <span class="about-doodle">z z z...</span>
+      </div>
+
+      <div class="about-copy">
+        <span class="eyebrow">MENOS PRISA, MÁS ESTILO</span>
+        <h2>La vida es mejor<br>cuando estás <span>cómodo.</span></h2>
+
+        <p>
+          En Perezosos Shop creemos que vestirte debe sentirse tan bien como se ve.
+          Elige tus favoritos, combina a tu manera y disfruta cada momento sin complicarte.
+        </p>
+
+        <a class="button button-pink" href="#catalogo">
+          Encuentra tu outfit <span>♡</span>
+        </a>
+      </div>
+    </section>
+
+    <section class="faq-section" id="preguntas">
+      <div>
+        <span class="eyebrow">TE AYUDAMOS</span>
+        <h2>¿Dudas? <span>Todo tranqui.</span></h2>
+      </div>
+
+      <details>
+        <summary>¿Cómo hago mi pedido? <span>＋</span></summary>
+        <p>
+          Agrega tus prendas al carrito y presiona “Pedir por WhatsApp”.
+          Se abrirá un mensaje con el resumen para confirmar tu pedido.
+        </p>
+      </details>
+
+      <details>
+        <summary>¿Cómo confirmo las tallas y disponibilidad? <span>＋</span></summary>
+        <p>
+          Antes de realizar el pago, confirma por WhatsApp la talla, el color,
+          la disponibilidad y el costo de envío.
+        </p>
+      </details>
+
+      <details>
+        <summary>¿Puedo combinar varios productos? <span>＋</span></summary>
+        <p>
+          ¡Claro! Agrega todas las prendas que quieras al carrito y envía tu pedido
+          en un solo mensaje.
+        </p>
+      </details>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <a class="footer-brand" href="#">
+      <img src="assets/perezoso-perfil.jpg" alt="">
+      <span>perezosos<strong>shop</strong></span>
+    </a>
+
+    <p>Ropa bonita para ir a tu ritmo. ♡</p>
+
+    <div class="footer-links">
+      <a href="#catalogo">Catálogo</a>
+      <a href="#nosotros">Nosotros</a>
+      <a href="#preguntas">Ayuda</a>
+    </div>
+
+    <small>© <span id="year"></span> Perezosos Shop. Hecho con cariño.</small>
+  </footer>
+
+  <!-- FONDO DEL CARRITO -->
+  <div class="cart-overlay" id="cart-overlay" hidden></div>
+
+  <!-- CARRITO -->
+  <aside
+    class="cart-drawer"
+    id="cart-drawer"
+    aria-label="Tu carrito"
+    aria-hidden="true"
+    inert
+  >
+    <div class="cart-header">
+      <div>
+        <span class="eyebrow">TU SELECCIÓN</span>
+        <h2>Mi carrito <span>♡</span></h2>
+      </div>
+      <button class="icon-button" id="close-cart" type="button" aria-label="Cerrar carrito">×</button>
+    </div>
+
+    <div class="cart-items" id="cart-items"></div>
+
+    <div class="cart-empty" id="cart-empty">
+      <span>♡</span>
+      <h3>Está muy tranquilito por aquí</h3>
+      <p>Agrega tus prendas favoritas para empezar.</p>
+      <button class="button button-pink" id="continue-shopping" type="button">
+        Ver catálogo
+      </button>
+    </div>
+
+    <div class="cart-footer" id="cart-footer" hidden>
+      <div class="cart-total">
+        <span>Total estimado</span>
+        <strong id="cart-total">$0 MXN</strong>
+      </div>
+
+      <p>El envío y la disponibilidad se confirman por WhatsApp.</p>
+
+      <button class="button button-whatsapp" id="checkout-button" type="button">
+        Pedir por WhatsApp <span>↗</span>
+      </button>
+
+      <button class="clear-cart" id="clear-cart" type="button">
+        Vaciar carrito
+      </button>
+    </div>
+  </aside>
+
+  <!-- MODAL DE DETALLES DEL PRODUCTO -->
+  <div class="product-modal-overlay" id="product-modal-overlay" hidden>
+    <section
+      class="product-modal"
+      id="product-modal"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="modal-product-name"
+      aria-describedby="modal-product-description"
+    >
+      <button
+        class="product-modal-close"
+        id="close-product-modal"
+        type="button"
+        aria-label="Cerrar detalles"
+      >×</button>
+
+      <div class="product-modal-image">
+        <img id="modal-product-image" src="" alt="">
+      </div>
+
+      <div class="product-modal-info">
+        <span class="eyebrow">ELIGE TU FAVORITO ♡</span>
+
+        <h2 id="modal-product-name">Nombre del producto</h2>
+        <p class="product-modal-price" id="modal-product-price">$0 MXN</p>
+        <p id="modal-product-description"></p>
+
+        <label for="modal-product-size">Talla</label>
+        <select id="modal-product-size" required>
+          <option value="">Selecciona una talla</option>
+          <option value="CH">Chica (CH)</option>
+          <option value="M">Mediana (M)</option>
+          <option value="G">Grande (G)</option>
+          <option value="EG">Extra grande (EG)</option>
+        </select>
+
+
+<label>Color</label>
+
+<div
+  class="modal-color-options"
+  id="modal-color-options"
+  role="group"
+  aria-label="Seleccionar color del producto"
+></div>
+
+<input
+  type="hidden"
+  id="modal-product-color"
+  value=""
+>
+
+
+        <label for="modal-product-quantity">Cantidad</label>
+
+        <div class="product-quantity-control">
+          <button
+            type="button"
+            id="modal-quantity-minus"
+            aria-label="Disminuir cantidad"
+          >−</button>
+
+          <input
+            id="modal-product-quantity"
+            type="number"
+            min="1"
+            max="99"
+            value="1"
+            step="1"
+            inputmode="numeric"
+          >
+
+          <button
+            type="button"
+            id="modal-quantity-plus"
+            aria-label="Aumentar cantidad"
+          >+</button>
+        </div>
+
+        <button
+          class="button button-pink product-modal-add"
+          id="modal-add-to-cart"
+          type="button"
+        >
+          Agregar al carrito ♡
+        </button>
+      </div>
+    </section>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <!-- MASCOTA ANIMADA DEL CATÁLOGO -->
+  <img
+    src="assets/personaje.png"
+    alt=""
+    class="catalog-mascot"
+    id="catalog-mascot"
+    aria-hidden="true"
+  >
+</body>
+</html>
